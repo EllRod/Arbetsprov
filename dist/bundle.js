@@ -71,19 +71,22 @@
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_css__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__style_css__);
 
 
-function component() {
-  var element = document.createElement('div');
 
-  // Lodash, now imported by this script
-  __webpack_require__(4);
-  document.write(__webpack_require__(9));
+  function component() {
+    var element = document.createElement('div');
 
-  return element;
-}
+    // Lodash, now imported by this script
+    element.innerHTML = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.join(['Hello', 'webpack'], ' ');
+    element.classList.add('hello');
 
-document.body.appendChild(component());
+    return element;
+  }
+
+  document.body.appendChild(component());
 
 /***/ }),
 /* 1 */
@@ -17253,8 +17256,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!./style.css", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!./style.css");
+		module.hot.accept("!!../node_modules/css-loader/index.js!./style.css", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js!./style.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -17272,7 +17275,7 @@ exports = module.exports = __webpack_require__(6)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n    background: yellow;\n}", ""]);
+exports.push([module.i, "body {\n    background: green;\n}", ""]);
 
 // exports
 
@@ -17811,13 +17814,6 @@ module.exports = function (css) {
 	// send back the fixed css
 	return fixedCss;
 };
-
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports) {
-
-module.exports = "It works from content.js.";
 
 
 /***/ })
