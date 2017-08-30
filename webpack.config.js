@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -30,9 +31,5 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('style.css')
-    //if you want to pass in options, you can do so:
-    //new ExtractTextPlugin({
-    //  filename: 'style.css'
-    //})
   ]
 };

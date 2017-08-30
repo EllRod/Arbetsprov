@@ -1,1 +1,3 @@
-module.exports = "It works from content.js.";
+export default function header() {
+    console.log('I get called from print.js!');
+  }

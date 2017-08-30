@@ -1,5 +1,8 @@
 import _ from 'lodash';
+import 'jquery';
 import './style.scss';
+import header from './content.js';
+
 
   function component() {
     var element = document.createElement('div');
