@@ -1,23 +1,26 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+      index: './src/index.js',
+      app: './src/content.js'
+    },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   devtool: 'inline-source-map',
   devServer: {
         contentBase: './dist'},
   plugins: [
-        new CleanWebpackPlugin(['dist']),
-        new HtmlWebpackPlugin({
-           title: 'Output TEST'
-         })
+        new ExtractTextPlugin('style.css'),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+          })
        ],
   module: {
     rules: [{
@@ -26,10 +29,14 @@ module.exports = {
             fallback: 'style-loader',
             //resolve-url-loader may be chained before sass-loader if necessary
             use: ['css-loader', 'sass-loader']
-          })
-    }]
-  },
-  plugins: [
-    new ExtractTextPlugin('style.css')
-  ]
+          }),
+    },
+    {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000
+        }
+      }]
+  }
 };
