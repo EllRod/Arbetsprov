@@ -1,4 +1,4 @@
-body {
+body {    
     background:#000;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
@@ -6,7 +6,7 @@ body {
 
 header {
     display: flex;
-    margin: 5% auto; 
+    margin: 5% auto 1%; 
     flex-direction: column;
     max-width: 480px;
     width: 100%;
@@ -54,14 +54,14 @@ section {
     color: #333;
     padding: none;
     margin: 0 auto;
-    max-width: 480px;
     width: 100%;
+    max-width: 480px;
 
     #wrapper {
         margin: 0 auto;
         padding: 0 5%;
 
-        .search-container {
+        .search-container, .result-container {
             display: flex;
             justify-content: space-between;
             flex-direction: column;
@@ -70,13 +70,42 @@ section {
                 display: flex;
                 margin: 2%;
                 justify-content: space-between;
+                
+                .container-items {
+                    width: 50%;
+                    display: flex;
 
-                h4 {
-                    padding: 0 5%;
-                    font-size: 1.0rem;
+                    h4 {
+                        padding: 25px 5%;
+                        font-size: 1.0rem;
+                    }
                 }
 
+                .items {
+                    display: flex;
+                    margin-top: 55px;
+
+                    input.box[type='checkbox'] {
+                        height: 30px;
+                        width: 30px;
+                        cursor: pointer;
+                    }
+                }
             }
+        }
+        .search-container {
+            position: absolute;
+            z-index: 100;
+            background-color: #ddd;
+            width: 100%;
+            max-width: 430px;
+            margin: 0 auto;
+        }
+        .result-container {
+            position: absolute;
+            z-index: 1;
+            background: #ddd;
+            max-width: 430px;        
         }
     }
 }

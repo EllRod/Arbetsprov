@@ -5,7 +5,7 @@ body {
 
 header {
   display: flex;
-  margin: 5% auto;
+  margin: 5% auto 1%;
   flex-direction: column;
   max-width: 480px;
   width: 100%; }
@@ -46,22 +46,44 @@ section {
   color: #333;
   padding: none;
   margin: 0 auto;
-  max-width: 480px;
-  width: 100%; }
+  width: 100%;
+  max-width: 480px; }
   section #wrapper {
     margin: 0 auto;
     padding: 0 5%; }
-    section #wrapper .search-container {
+    section #wrapper .search-container, section #wrapper .result-container {
       display: flex;
       justify-content: space-between;
       flex-direction: column; }
-      section #wrapper .search-container article {
+      section #wrapper .search-container article, section #wrapper .result-container article {
         display: flex;
         margin: 2%;
         justify-content: space-between; }
-        section #wrapper .search-container article h4 {
-          padding: 0 5%;
-          font-size: 1.0rem; }
+        section #wrapper .search-container article .container-items, section #wrapper .result-container article .container-items {
+          width: 50%;
+          display: flex; }
+          section #wrapper .search-container article .container-items h4, section #wrapper .result-container article .container-items h4 {
+            padding: 25px 5%;
+            font-size: 1.0rem; }
+        section #wrapper .search-container article .items, section #wrapper .result-container article .items {
+          display: flex;
+          margin-top: 55px; }
+          section #wrapper .search-container article .items input.box[type='checkbox'], section #wrapper .result-container article .items input.box[type='checkbox'] {
+            height: 30px;
+            width: 30px;
+            cursor: pointer; }
+    section #wrapper .search-container {
+      position: absolute;
+      z-index: 100;
+      background-color: #ddd;
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto; }
+    section #wrapper .result-container {
+      position: absolute;
+      z-index: 1;
+      background: #ddd;
+      max-width: 430px; }
 
 footer {
   background: #dadada; }
