@@ -30,6 +30,8 @@ $(function getImages () {
     if ($("#searchField").val().length > 2) {
       var apiKey = 's27nnq3qj88bkz2xws6n4je6';
       var q = $("#searchField").val();
+      var d = new Date();
+      var date = d.toUTCString().split(' ').slice(0, 5).join(' '); 
 
         $.ajax({
           type: 'GET',
@@ -48,11 +50,7 @@ $(function getImages () {
 
           }
           for (var i = 0; i <= 4; i++) {
-            $("#output").append("<article><div class='container-items'><img src='" + data.images[i].display_sizes[0].uri + "'/></div><div class='container-items'><h4>" + data.images[i].title + "</h4></div><div class='items'><input class='box' type='checkbox' /></div></article>");
-
-            console.log('Loading images!');
-
-
+            $("#output").append("<article><div class='container-items'><img src='" + data.images[i].display_sizes[0].uri + "'/></div><div class='container-items'><h4>" + data.images[i].title + "</h4></div><div class='container-items'><span>" + date + "</span></div><div class='items'><input class='box' type='checkbox' /></div></article>");
           }
           
           inputBoxChange();
@@ -60,7 +58,6 @@ $(function getImages () {
         })
         .fail(function(data) {
           console.log(JSON.stringify(data, 2));
-
         });
 
       } else {
@@ -68,12 +65,9 @@ $(function getImages () {
 
           setTimeout(function() {
             $('article:not(.checked)').remove();
-
+            
           }, timeout);
-
-        }		  
-        console.log('Empty field!');
-        
+        }		          
       }
     }, timeout);
   })

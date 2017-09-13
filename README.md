@@ -18,3 +18,11 @@ What we look at
 Solve the task as far as you think is necessary. For this specific assignment focus on HTML/CSS, structure and good coding standards rather than advanced JS.
  
 When done push your branch and let us know it’s done, e.g. by a pull request.
+
+How to used the Getty image search feature
+* Open the index.html file your find in the "/dist" folder on your favorite browser.
+* Once opened, type a word least three(3) letters for the image-search to begin.
+* The search feature will show up to five(5) suggestions according to the word you type. If nothing is found, it will show empty space below the search-field.
+* When presented images according the word you choose to search on, your will se thumbnail of the image, title and time/date.
+* If you like to separate the selected image from the suggestion list, you check the checkbox and the images will move to a "result" area behind the search list.
+* Once you have selected the images your like to keep, your erase the search-field and you see the selected ones.
